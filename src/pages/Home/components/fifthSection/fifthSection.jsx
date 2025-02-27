@@ -102,14 +102,14 @@ export const FifthSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-16 md:py-24 bg-[#000336] min-h-screen flex flex-col justify-center"
+      className="py-16 md:py-24 bg-[#000336]  flex flex-col justify-center"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1
           ref={titleRef}
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-12 md:mb-16"
         >
-          My <span className="text-purple-500">Work Experience</span>
+          My <span className="text-purple-400">Work Experience</span>
         </h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">

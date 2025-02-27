@@ -36,7 +36,7 @@ const projects = [
     title: "Rental Cars Platform",
     description: "Car rental service built with React.js, ensuring a smooth booking experience.",
     image: innovacars,
-    sourceCode: 'https://vercel.com/zackcis-projects/my-cars/AZpFNgrMWbwYUsLPDJ7kqnpTNKVN',
+    sourceCode: 'https://my-cars-eta.vercel.app/',
     date: "November 2024",
   },
   {
@@ -100,7 +100,7 @@ export const ThirdSection = () => {
   return (
     <section 
       ref={sectionRef}
-      className="bg-[#000336]  w-full min-h-screen  flex flex-col items-center py-16 px-6"
+      className="bg-[#000336] w-full flex flex-col items-center py-16 px-6"
     >
       <div className="text-center mb-12">
         <h1 className="text-4xl sm:text-5xl font-bold text-white">
@@ -114,7 +114,7 @@ export const ThirdSection = () => {
           <PinContainer title="Visit Project" href={project.sourceCode} key={index}>
             <div 
               ref={el => cardsRef.current[index] = el}
-              className="min-w-[400px] min-h-[360px] bg-[#2c2c5e67] rounded-xl shadow-xl transition-all duration-300 p-4 relative cursor-pointer"
+              className="min-w-[280px] lg:min-w-[400px]   min-h-[420px]  rounded-xl shadow-xl transition-all duration-300 p-4 relative cursor-pointer"
               onClick={() => window.open(project.sourceCode, '_blank')}
             >
               <div className="overflow-hidden rounded-lg">

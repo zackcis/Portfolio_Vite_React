@@ -50,7 +50,7 @@ export const FourthSection = () => {
         <section className="bg-[#000336] py-8 md:py-16 overflow-hidden relative  flex flex-col items-center">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white font-bold mb-8 md:mb-12 text-center px-4 max-w-4xl">
                 Kind words from my 
-                <span className="text-purple-400"> clients</span> &
+                <span className="text-purple-400 "> clients</span> &
                 <span className="text-purple-400"> Innovatechs</span> team members
             </h1>
             <div className="relative w-full overflow-hidden flex justify-center  md:py-10">

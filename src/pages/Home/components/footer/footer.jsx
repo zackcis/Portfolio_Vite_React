@@ -17,7 +17,7 @@ export const Footer = () => {
     <footer className="magicpattern relative w-full bg-[#000336] px-6 py-10 md:py-14">
       <div className="flex flex-col items-center text-center">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white max-w-3xl">
-          Ready to take <span className="text-purple-500">your</span> digital presence to the next level?
+          Ready to take <span className="text-purple-400">your</span> digital presence to the next level?
         </h1>
         <p className="mt-4 text-gray-300 text-sm sm:text-base md:mt-6 max-w-2xl">
           Reach out to me today and let&apos;s discuss how I can help you achieve your goals.
@@ -26,7 +26,7 @@ export const Footer = () => {
           href={`mailto:${links.ownerEmail}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-6 md:mt-8 flex items-center gap-2 px-5 py-3 text-white bg-purple-600 rounded-lg hover:bg-purple-700 transition"
+          className="mt-6 md:mt-8 flex items-center gap-2 px-5 py-3 text-white bg-purple-600 rounded-lg hover:bg-purple-300 transition"
         >
           <FaLocationArrow size={20} />
           <span>Let's get in touch</span>
@@ -41,7 +41,7 @@ export const Footer = () => {
             href=""
             target="_blank"
             rel="noopener noreferrer"
-            className="text-purple-600"
+            className="text-purple-400 hover:text-purple-300"
           >
             ZAKARIA DAHAR
           </a>
