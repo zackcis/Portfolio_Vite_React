@@ -14,30 +14,31 @@ const workExperience = [
     title: "Full-Stack Developer",
     company: "2M Maroc",
     thumbnail: soread,
-    desc: "Developed a training management system using Laravel and JavaScript, optimizing participant tracking and request handling.",
+    desc: "Designed and developed a comprehensive training management system using Laravel and JavaScript. Enhanced efficiency in tracking employee training, managing participant data, and automating",
   },
   {
     id: 2,
     title: "Software Engineer",
     company: "Innovatechs",
     thumbnail: innovatechs,
-    desc: "Built and deployed various SaaS solutions, focusing on scalability, performance, and client needs.",
+    desc: "Contributed to the development and deployment of scalable SaaS solutions, focusing on optimizing performance, enhancing security, and meeting diverse client requirements.",
   },
   {
     id: 3,
     title: "Front-End Developer",
     company: "Bookizone",
     thumbnail: bookizone,
-    desc: "Led front-end development for an e-commerce platform, ensuring a responsive UI and smooth UX.",
+    desc: "Led the front-end development for a high-performance e-commerce platform, implementing a modern UI/UX to ensure seamless navigation, fast load times, and mobile responsiveness.",
   },
   {
     id: 4,
     title: "Freelancer",
     company: "Various Clients",
     thumbnail: freelance,
-    desc: "Developed custom web solutions, specializing in e-commerce and interactive web applications.",
+    desc: "Designed and built custom web applications for diverse clients, specializing in e-commerce platforms, interactive web solutions, and performance-driven user experiences.",
   },
 ];
+
 
 
 export const FifthSection = () => {

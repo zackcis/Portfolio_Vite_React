@@ -19,48 +19,49 @@ import final from '../../../../assets/images/1715442827539.jpeg';
 
 const projects = [
   {
-    title: "Training Management System",
-    description: "Developed with Laravel & JavaScript for 2M Maroc to manage employee training.",
+    title: "Manage training",
+    description: "A full-stack application developed with Laravel and JavaScript for 2M Maroc to efficiently manage employee training programs, track sessions, and generate reports.",
     image: manage,
     date: "January 2025",
     sourceCode: 'https://github.com/zackcis/manage_training',
   },
   {
     title: "KhalidFit",
-    description: "A website for a Moroccan champion, built using React.js to showcase fitness services.",
+    description: "A professional website built with React.js for a Moroccan fitness champion, showcasing his coaching services, transformation programs, and client success stories.",
     image: khalid,
     sourceCode: 'https://khalid-fitness.vercel.app/',
     date: "December 2024",
   },
   {
     title: "Rental Cars Platform",
-    description: "Car rental service built with React.js, ensuring a smooth booking experience.",
+    description: "A car rental platform developed using React.js, offering users a seamless booking experience with an intuitive interface and dynamic vehicle listings.",
     image: innovacars,
     sourceCode: 'https://my-cars-eta.vercel.app/',
     date: "November 2024",
   },
   {
     title: "E-Commerce Websites",
-    description: "Multiple e-commerce platforms developed with React.js for smooth shopping experiences.",
+    description: "A collection of e-commerce platforms built with React.js, designed for optimized shopping experiences, secure transactions, and user-friendly navigation.",
     image: ecom,
     sourceCode: 'https://e-commerce-websites-react-js.vercel.app/',
     date: "October 2024",
   },
   {
     title: "Innova-Techs",
-    description: "Landing page & website sections built for Innovatechs using React.js.",
+    description: "Designed and developed multiple landing page sections for Innovatechs using React.js, ensuring a modern, responsive, and visually appealing interface.",
     image: innovatechs,
     sourceCode: 'https://innovatechs.vercel.app/',
     date: "September 2024",
   },
   {
-    title: "Zakaria Dahar Final Project",
-    description: "Final project at Lionsgeek, developed using Laravel to showcase full-stack capabilities.",
+    title: "Zentasks",
+    description: "A full-stack web application built using Laravel as part of my final project at Lionsgeek, demonstrating backend logic, database management, and dynamic front-end features.",
     image: final,
     sourceCode: 'https://github.com/zackcis/Zakaria_Dahar_Final_Project_laravel',
     date: "August 2024",
   },
 ];
+
 
 export const ThirdSection = () => {
   const sectionRef = useRef(null);
@@ -82,16 +83,16 @@ export const ThirdSection = () => {
       opacity: 1,
       y: 0,
       rotationX: 0,
-      duration: 1,
+      duration: 0.7,
       ease: "power3.out",
       stagger: {
-        amount: 0.5, // Temps total de décalage entre les cartes
+        amount: 0, // Temps total de décalage entre les cartes
         from: "center",
       },
       scrollTrigger: {
         trigger: sectionRef.current,
         start: "top 70%", // Déclenche plus tôt pour un meilleur timing
-        end: "bottom 20%",
+        end: "bottom 60%",
         toggleActions: "play none none reset", // Réinitialise proprement
       },
     });
@@ -132,8 +133,12 @@ export const ThirdSection = () => {
 
               <div className="flex justify-between items-center px-5 pb-4 text-gray-400 text-sm">
                 <p>{project.date}</p>
-                <div className="flex items-center text-purple-400">
+                <div  className=" text-purple-400">
+                  <a className="flex justify-center items-center" href={ project.sourceCode }>
+
+                  <p>Source code</p>
                   <FaLocationArrow className="ml-2" color="#cbacf9" />
+                  </a>
                 </div>
               </div>
             </div>

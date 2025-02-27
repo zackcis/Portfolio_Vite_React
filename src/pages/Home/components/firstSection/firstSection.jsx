@@ -30,7 +30,7 @@
         }, [lastScrollY]);
 
         return (
-            <section className="magicpattern sm:min-h-screen flex flex-col bg-slate-900 overflow-hidden">
+            <section className="magicpattern sm:min-h-screen flex flex-col bg-slate-900 overflow-hidden overflow-x-hidden">
                 <Header />
                 {/* Animated background gradient */}
                 <div

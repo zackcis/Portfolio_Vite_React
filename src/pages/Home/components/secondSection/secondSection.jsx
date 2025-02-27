@@ -32,74 +32,54 @@ export const SecondSection = () => {
   const bgRef = useRef(null);
 
   useEffect(() => {
-    // Background animation - cosmic swirl (runs continuously)
     gsap.to(bgRef.current, {
       backgroundPosition: "200% 200%",
-      duration: 10, // Slowed down for smoother cosmic effect
+      duration: 10,
       repeat: -1,
       ease: "linear",
     });
-
-    // Title animation with ScrollTrigger
-    const titleTl = gsap.timeline({
+  
+    const mainTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
         start: "top 80%",
-        end: "bottom top",
-        toggleActions: "restart none none reset",
+        once: true,
       },
     });
-
+  
     const titleChars = titleRef.current.textContent.split("");
-    titleRef.current.innerHTML = titleChars.map(char => `<span class="char">${char === " " ? " " : char}</span>`).join("");
-    titleTl.fromTo(
+    titleRef.current.innerHTML = titleChars
+      .map((char) => `<span class="char">${char === " " ? "&nbsp;" : char}</span>`)
+      .join("");
+  
+    mainTimeline.fromTo(
       ".char",
-      { opacity: 0, scale: 0.5, y: () => Math.random() * 100 - 50, x: () => Math.random() * 100 - 50 },
+      { opacity: 0, scale: 0.5, y: () => Math.random() * 50 - 25, x: () => Math.random() * 50 - 25 },
       {
         opacity: 1,
         scale: 1,
         y: 0,
         x: 0,
-        duration: 0.9,
-        stagger: 0.03,
-        ease: "elastic.out(1, 0.5)",
+        duration: 0.4, // Much faster
+        stagger: 0.015, // Faster stagger
+        ease: "power2.out", // Faster ease
       }
-    ).to(
-      ".char",
-      {
-        textShadow: "0 0 20px rgba(255, 255, 255, 0.8)",
-        duration: 0.3,
-        repeat: 1,
-        yoyo: true,
-        ease: "power2.inOut",
-      },
-      "-=0.3"
     );
-
-    // Tech items animation with ScrollTrigger
+  
     itemsRef.current.forEach((item, index) => {
       if (item) {
-        const itemTl = gsap.timeline({
-          scrollTrigger: {
-            trigger: item,
-            start: "top 85%",
-            end: "bottom top",
-            toggleActions: "restart none none reset",
-          },
-        });
-
         const angle = (index / techStack.length) * Math.PI * 2;
-        const radius = 250;
+        const radius = 150; // Smaller radius for tighter look
         const spiralFactor = 1 - index / techStack.length;
-
-        itemTl.fromTo(
+  
+        mainTimeline.fromTo(
           item,
           {
             x: Math.cos(angle) * radius * spiralFactor,
             y: Math.sin(angle) * radius * spiralFactor,
             opacity: 0,
-            scale: 0.3,
-            rotation: 360,
+            scale: 0.5,
+            rotation: 180,
           },
           {
             x: 0,
@@ -107,59 +87,37 @@ export const SecondSection = () => {
             opacity: 1,
             scale: 1,
             rotation: 0,
-            duration: 0.9,
-            ease: "power3.out",
-            delay: index * 0.05, // Slightly increased for smoother spiral
-            onUpdate: function () {
-              const trail = item.querySelector(".trail");
-              if (trail) {
-                gsap.to(trail, {
-                  opacity: 0.7,
-                  scale: 1.5,
-                  duration: 0.3, // Slightly shorter for snappier trail
-                  ease: "power1.out",
-                  onComplete: () => gsap.to(trail, { opacity: 0, scale: 0, duration: 0.2 }),
-                });
-              }
-            },
-          }
+            duration: 0.5, // Faster item animation
+            ease: "power2.out", // Faster ease
+            delay: 0, // No per-item delay
+          },
+          "-=0.3" // Slight overlap with title for speed
         );
       }
     });
-
-    // Simplified hover effect
+  
     itemsRef.current.forEach((item) => {
       const icon = item.querySelector(".icon");
-
+  
       const hoverTl = gsap.timeline({ paused: true });
       hoverTl
-        .to(icon, {
-          scale: 1.2, // Slightly larger for better visibility
-          duration: 0.25,
-          ease: "power2.out",
-        })
-        .to(
-          item,
-          {
-            boxShadow: "0 12px 24px rgba(255, 255, 255, 0.2)",
-            duration: 0.25,
-          },
-          0
-        );
-
+        .to(icon, { scale: 1.2, duration: 0.2, ease: "power2.out" })
+        .to(item, { boxShadow: "0 8px 16px rgba(255, 255, 255, 0.2)", duration: 0.2 }, 0);
+  
       item.addEventListener("mouseenter", () => hoverTl.play());
       item.addEventListener("mouseleave", () => hoverTl.reverse());
     });
-
-    // Cleanup
+  
     return () => {
       itemsRef.current.forEach((item) => {
         item.removeEventListener("mouseenter", () => {});
         item.removeEventListener("mouseleave", () => {});
       });
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
+  
+  
 
   return (
     <div
