@@ -30,7 +30,7 @@
         }, [lastScrollY]);
 
         return (
-            <section className="magicpattern flex flex-col bg-slate-900 overflow-hidden">
+            <section className="magicpattern sm:min-h-screen flex flex-col bg-slate-900 overflow-hidden">
                 <Header />
                 {/* Animated background gradient */}
                 <div
@@ -147,7 +147,7 @@
                             hover:shadow-lg hover:shadow-purple-500/30
                             ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}
                         `}
-                            style={{ transitionDelay: '100ms' }}
+                            style={{ transitionDelay: '1000ms' }}
                             // onClick={() => window.location.href = ''}
                         >
                             {/* Button background with gradient */}
