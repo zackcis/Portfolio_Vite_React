@@ -134,7 +134,7 @@ export const ThirdSection = () => {
               <div className="flex justify-between items-center px-5 pb-4 text-gray-400 text-sm">
                 <p>{project.date}</p>
                 <div  className=" text-purple-400">
-                  <a className="flex justify-center items-center" href={ project.sourceCode }>
+                  <a className="flex justify-center items-center" target="_blank" href={ project.sourceCode }>
 
                   <p>Source code</p>
                   <FaLocationArrow className="ml-2" color="#cbacf9" />
