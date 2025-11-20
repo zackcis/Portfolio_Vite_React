@@ -12,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 // Import images
 import khalid from '../../../../assets/images/khalidFit.png';
 import ecom from '../../../../assets/images/Ecom.png';
-import innovacars from '../../../../assets/images/innovacars.png';
+import innovacars from '../../../../assets/images/Hijabi.png';
 import manage from '../../../../assets/images/manageTraining.png';
 import innovatechs from '../../../../assets/images/innovatechs.png';
 import final from '../../../../assets/images/1715442827539.jpeg';
@@ -33,11 +33,11 @@ const projects = [
     date: "December 2024",
   },
   {
-    title: "Rental Cars Platform",
-    description: "A car rental platform developed using React.js, offering users a seamless booking experience with an intuitive interface and dynamic vehicle listings.",
+    title: "Hijab store islamic",
+    description: "An Islamic fashion e-commerce platform built with React and Laravel, offering users a smooth shopping experience with dynamic product listings and a responsive, modern interface.",
     image: innovacars,
-    sourceCode: 'https://my-cars-eta.vercel.app/',
-    date: "November 2024",
+    sourceCode: 'https://www.hijabstoreislamic.com/',
+    date: "januarry 2025",
   },
   {
     title: "E-Commerce Websites",
